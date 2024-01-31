@@ -1,0 +1,49 @@
+<mat-card *ngIf="user">
+    <h3 class="ml20 mt10 ">Your Profile Details</h3>
+    <!-- {{user | json}} -->
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="container">
+                <div class="container text-center">
+                    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJQAmQMBIgACEQEDEQH/xAAbAAEAAgMBAQAAAAAAAAAAAAAAAwUBAgQGB//EADQQAQACAQIDAwoEBwAAAAAAAAABAgMEEQUhQRIxcRMiIzJRUmGBobEUQpHBMzRDctHh8P/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwD6qAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA5tXrsOm82Z7V/dr+/sQcT104fRYZ9JMedMfl/2pu/fcHdl4pqLep2aR4boZ12rmd/xFv0j/DnAduPiepp61q3j2TXb7LDS8Rw55itvR3npM8p+aiYkHqhVcM18zauDPbfflS0/ZagAAAAAAAAAAI9RljDhvkn8sbx8Z6JFfxq+2mpT3rfYFPaZveb2mZtad5lgAAAAAZ+j0HD9ROp0tb29eOVvF55acDtzzU8JBagAAAAA1rbfv72yBJW/SQbhAAreOR6LFPSLT9lk5eJ4vK6O+3rV86I8AUAAAAAACy4HHp8s9IpEfVWrrg2Kaaack/1J5eEf9IO8AAGtrxHdz+INpmIjeWnlPg0md5YAABmJmO5JW8T3ogE++4hiZjq2i89QUvEdLOnzb1ifJ2nzfh8HI9Jk8nmpOPJXes96l1mkjTzNq5K2p7JtHaj5A5Q3g3ADdPpdP8AibfxKUr1mZ5/KAY0mmtqs3Yj1e+0+yHoq1itYrWNoiNoiOiLBjxafFFMUbR1nrMtpyT0gEjE3iPiimZlgG1r9rl0agAAAAADF71pWb3mIrHOZkGe5w6niWPHvXD59vpDi1utvnma03pi37utvFyAnzavPm9bJO3u15QgAAAAAEuLU5sU+ZltEeyecLDT8UrbaNRHZn3q9yqAemiYtETE7xPdsKHSavJpp2jzsczzp0+XxXeHLTNjjJjnes/QG4AAAAACm4jq/LZPJ0n0VZ/WXdxPP5DT7Vna9+UbezqpAAAAAAAAAAAHRotVOmy7zvNJ5Wj93OA9NExaImvOJjeJ9or+EZ+3jnDafOp6vgsAAAAAUnFMnb1c16UjaIcjfLbtZclp77Wmfq0AAAAAAAAAAAABPosnkdVjvvy32nwlfvM9OT0tLdulbe9ESDIABPdPgwA81Pf8wAAAAAAAAAAAAAHotL/K4v7I+wAkAB//2Q=="
+                     alt=""
+                     class="profile-image">
+                     <h2 class="mt20">{{ user.firstName }} {{user.lastName}}</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+                        <!-- table details -->
+                        <table class="table text-center">
+                            <tr>
+                                <td>User Name</td>
+                                <td>{{user.firstName}}</td>
+                            </tr>
+                            <tr>
+                                <td>User Id</td>
+                                <td>{{user.id}}</td>
+                            </tr>
+                            <tr>
+                                <td>Contact</td>
+                                <td>{{user.phone}}</td>
+                            </tr>
+                            <tr>
+                                <td>Role</td>
+                                <td>{{ user.authorities[0].authority }}</td>
+                            </tr>
+                            <tr>
+                                <td>Status</td>
+                                <td>{{user.enabled?"ACTIVE":"NOTACTIVE"}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+    <mat-card-actions >
+        <div class="container text-center ">
+        <button mat-raised-button color="primary" class="mr20">UPDATE</button>
+        <button mat-raised-button color="accent">SHARE</button>
+    </div>
+    </mat-card-actions>
+</mat-card>
